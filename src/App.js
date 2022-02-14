@@ -5,8 +5,7 @@ import {HashRouter as Router,Route,Routes} from 'react-router-dom';
 
 import MainBody from './components/MainBody';
 function App() {
-  
-  return (  
+  return (
     <Router>
       <div className="App">
         <Navbar/>
@@ -14,6 +13,7 @@ function App() {
         <Footer/>
       </div>
     </Router>
+      
   );
 }
 export default App;
