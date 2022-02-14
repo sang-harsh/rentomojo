@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rentomojo/static/css/main.38c0e154.css",
-    "main.js": "/rentomojo/static/js/main.559095e0.js",
+    "main.css": "/rentomojo/static/css/main.df7c13a8.css",
+    "main.js": "/rentomojo/static/js/main.e0c14088.js",
     "static/js/787.8488ec55.chunk.js": "/rentomojo/static/js/787.8488ec55.chunk.js",
     "static/media/Logo.png": "/rentomojo/static/media/Logo.70709fc0ebeba8140de3.png",
     "index.html": "/rentomojo/index.html",
-    "main.38c0e154.css.map": "/rentomojo/static/css/main.38c0e154.css.map",
-    "main.559095e0.js.map": "/rentomojo/static/js/main.559095e0.js.map",
+    "main.df7c13a8.css.map": "/rentomojo/static/css/main.df7c13a8.css.map",
+    "main.e0c14088.js.map": "/rentomojo/static/js/main.e0c14088.js.map",
     "787.8488ec55.chunk.js.map": "/rentomojo/static/js/787.8488ec55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38c0e154.css",
-    "static/js/main.559095e0.js"
+    "static/css/main.df7c13a8.css",
+    "static/js/main.e0c14088.js"
   ]
 }
