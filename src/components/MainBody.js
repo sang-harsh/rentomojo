@@ -9,7 +9,7 @@ function MainBody() {
   return (
     <div className='main-body'>
       <Routes>
-        <Route exact path="/" element={<TableComponent/>}></Route>
+        <Route exact path="/rentmojo/" element={<TableComponent/>}></Route>
         <Route exact path="/blogsPage" element={<BlogsPage/>}></Route>
         <Route path="/blogsPage/:id" element={<UserBlogs/>}></Route>
         <Route path="/blog/:id/:postId" element={<Blog/>}></Route>
