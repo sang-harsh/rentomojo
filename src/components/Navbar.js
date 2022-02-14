@@ -9,7 +9,7 @@ function Navbar() {
       <img className="siteLogo" src={LogoImage} alt="Rentomojo" />
        <div className='siteHeading'>RentoMojo</div>
       <ul className='nav-links-container'>
-        <Link className='nav-links' to="/home"><li >Home</li></Link>
+        <Link className='nav-links' to="/"><li >Home</li></Link>
         <Link className='nav-links' to="/blogsPage"><li className='nav-links'>Posts</li></Link>
         {/* <Link className='nav-links' to="/blog"><li className='nav-links'>Post Details</li></Link>   */}
         <li className='nav-links'>Post Details</li>
