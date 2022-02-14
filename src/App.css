@@ -1,6 +1,10 @@
 .App {
   font-family: Arial, Helvetica, sans-serif;
 }
+.main-body {
+  /* padding: 2rem; */
+  min-height: calc(100vh - 6rem - 7rem);
+}
 /* NavBar CSS */
 nav {
   background-color: black;
