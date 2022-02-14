@@ -1,10 +1,6 @@
 .App {
   font-family: Arial, Helvetica, sans-serif;
 }
-.main-body {
-  /* padding: 2rem; */
-  min-height: calc(100vh - 6rem - 7rem);
-}
 /* NavBar CSS */
 nav {
   background-color: black;
@@ -14,6 +10,28 @@ nav {
   min-height: 6rem;
 }
 
+.main-body {
+  /* min-height: calc(100vh - 6rem - 5rem); */
+  position: relative;
+  min-height: 100vh;
+  background-color: #00c0ff;
+}
+
+/* Footer CSS */
+
+.footer {
+  display: flex;
+  background-color: black;
+  color: #00c0ff;
+  height: 5rem;
+  align-items: center;
+  text-align: center;
+  padding-left: 45vw;
+  width: 100%;
+  position: absolute;
+}
+
+/* Nav Block CSS */
 .nav-links-container {
   color: white;
   display: flex;
@@ -41,24 +59,17 @@ nav {
   padding: 1rem;
 }
 
-/* Footer CSS */
-
-.footer {
-  display: flex;
-  background-color: black;
-  color: #00c0ff;
-  height: 7rem;
-  align-items: center;
-  text-align: center;
-  padding-left: 45vw;
-}
 /* Table Component CSS */
 .tableComponent {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.5rem;  
 }
 
 /* BLogsPage CSS */
+.blogsPage {
+  /* background-color: #00c0ff; */
+  padding: 5rem 10rem;
+}
 
 .postsContainer {
   /* background-color: red; */
@@ -116,10 +127,7 @@ nav {
   display: flex;
   justify-content: center;
 }
-.blogsPage {
-  background-color: #00c0ff;
-  padding: 5rem 10rem;
-}
+
 #blogSearchInput {
   margin-top: 2rem;
   width: 30rem;
@@ -132,7 +140,7 @@ nav {
 /* Post Details Page */
 .blog {
   background-color: #00c0ff;
-  padding: 5rem 10rem;
+  padding: 3rem 10rem;
 }
 
 .blog-container {
