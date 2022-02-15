@@ -11,7 +11,7 @@ function Navbar() {
       <ul className='nav-links-container'>
         <Link className='nav-links' to="/"><li >Home</li></Link>
         <Link className='nav-links' to="/allBlogs"><li className='nav-links'>Posts</li></Link>
-        <li className='nav-links'>Post Details</li>
+        <Link className='nav-links' to="/randomBlog"><li className='nav-links'>Post Details</li></Link>
       </ul>
         
     </nav>

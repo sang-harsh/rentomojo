@@ -4,6 +4,7 @@ import TableComponent from '../components/TableComponent';
 import BlogsPage from '../components/BlogsPage';
 import Blog from '../components/Blog';
 import UserBlogs from '../components/UserBlogs';
+import RandomBlog from './RandomBlog';
 
 function MainBody() {
   return (
@@ -13,6 +14,7 @@ function MainBody() {
         <Route exact path="/allBlogs" component={BlogsPage}></Route>
         <Route exact path="/blogsForUser/:id" component={UserBlogs}></Route>
         <Route path="/blogsForUser/:id/:postId" component={Blog}></Route>
+        <Route path="/randomBlog" component={RandomBlog}></Route>
       </Switch>
     </div>
   )
