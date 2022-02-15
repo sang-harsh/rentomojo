@@ -1,21 +1,27 @@
 import React,{useEffect, useState} from 'react';
 import PaginationComponent from './PaginationComponent';
 
+
 function BlogsPage() {
   
   const [posts, setPosts]= useState([]);
   const [currentPage,setCurrentPage]=useState(1);
   const [postsPerPage]=useState(5);
   const [filteredPosts,setFilteredPosts]=useState([]);
- 
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost,indexOfLastPost);
+  
   let [searchTerm,setSearchTerm] = useState('');
 
   useEffect(() => {
+    
     fetch(`https://jsonplaceholder.typicode.com/posts/`)
       .then(res => res.json())
       .then(data => {
-        setPosts(data);
-        setFilteredPosts(posts);
+        setPosts(data); 
+        setFilteredPosts(data);
       }).catch(error =>console.log(error));
   }, [])
 
@@ -32,13 +38,8 @@ function BlogsPage() {
     )
   }, [searchTerm]);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost,indexOfLastPost);
-
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
     
-
   return (
     <div className='blogsPage'>
       <h1 id="blogsPageTitle">List of all Blogs</h1>
@@ -47,7 +48,7 @@ function BlogsPage() {
       <input id="blogSearchInput"placeholder='Search for Blog...' 
       onChange={(e) =>{setSearchTerm(e.target.value.toLowerCase())}}/>
 
-      {/* <PaginationComponent postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/> */}
+      <PaginationComponent postsPerPage={postsPerPage} totalPosts={filteredPosts.length} paginate={paginate}/>
 
           {   
               filteredPosts.map((val)=>

@@ -12,7 +12,7 @@ function TableComponent() {
     {dataField: 'company.name',text: 'Company',sort: true,filter: textFilter()},
     {dataField: 'username',text: 'Username/Blogs Link',
     formatter: (cell, row) =>
-      <Link to={`/blogsPage/` + row.id}> {cell} </Link>
+      <Link to={`/blogsForUser/`+ row.id}> {cell} </Link>
     }
   ];
 

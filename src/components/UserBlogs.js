@@ -7,13 +7,21 @@ function UserBlogs() {
   const [userBlogsList,setUserBlogsList]=useState([]);
   const [currentPage,setCurrentPage]=useState(1);
   const [postsPerPage]=useState(5);
+  
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  let currentPosts = userBlogsList.slice(indexOfFirstPost,indexOfLastPost);
+  const {id}=useParams();
+  let local = localStorage.getItem("delete");
 
-  const {id,postId}=useParams();
 
-  //let id=1;
   useEffect(()=>{
     getBlogs();
-  },[id])
+    if(local){
+      alert(`Deleted item ${local}`);
+      localStorage.removeItem("delete");
+    }
+  },[])
   
   function getBlogs(){
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
@@ -22,9 +30,6 @@ function UserBlogs() {
       setUserBlogsList(result);
     }).catch(error =>console.log(error));
   }
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = userBlogsList.slice(indexOfFirstPost,indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -32,14 +37,12 @@ function UserBlogs() {
     <div className='blogsPage'>
       <h1 id="blogsPageTitle"> Blogs </h1>
       <div className="postsContainer">
-
       <PaginationComponent postsPerPage={postsPerPage} totalPosts={userBlogsList.length} paginate={paginate}/>
-
           {
               currentPosts.map((val)=>
               <div className="posts">
                   <p className="post_id">{val.id}</p>
-                  <h2 key={val.id} className='title'><Link to={`/blog/${id}/${val.id}`}>{val.title}</Link></h2>
+                  <h2 key={val.id} className='title'><Link to={`/blogsForUser/${id}/${val.id}`}>{val.title}</Link></h2>
                   <p className="post_info">{val.body}</p>
               </div>
               )

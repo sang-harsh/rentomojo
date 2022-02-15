@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route,Routes,Switch,HashRouter as Router} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
 import TableComponent from '../components/TableComponent';
 import BlogsPage from '../components/BlogsPage';
 import Blog from '../components/Blog';
@@ -10,12 +10,11 @@ function MainBody() {
     <div className='main-body'>
       <Switch>
         <Route exact path="/" component={TableComponent}></Route>
-        <Route exact path="/blogsPage" component={BlogsPage}></Route>
-        <Route path="/blogsPage/:id" component={UserBlogs}></Route>
-        <Route path="/blog/:id/:postId" component={Blog}></Route>
+        <Route exact path="/allBlogs" component={BlogsPage}></Route>
+        <Route exact path="/blogsForUser/:id" component={UserBlogs}></Route>
+        <Route path="/blogsForUser/:id/:postId" component={Blog}></Route>
       </Switch>
     </div>
   )
 }
-
 export default MainBody;
